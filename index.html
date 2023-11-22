@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Bedre</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        html{
+            scroll-behavior: smooth ;
+        }
+        body{
+            background-color: #080808;
+            color: #fff;
+        
+        }
+        
+        #header{
+            width: 100%;
+            height: 100vh;
+            background-image: url(black_hole.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .container{
+            padding: 10px 10% 10%;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo{
+            text-align: left;
+            justify-content: left;
+        
+            width: 100px;
+          
+        }
+        
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+        
+        nav ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+        
+        nav ul li a::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            background-color: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+        nav ul li a:hover::after{
+            width: 100%;
+        
+        }
+        nav ul li a:hover{
+            background-color: #000000;
+            padding: 4px;
+            border-radius: 13px;
+            transition: 0.5s;
+        }
+        
+        .header-text{
+            margin-top: 20%;
+            font-size: 30px;
+        }
+        .header-text h1{
+            font-size: 60px;
+            margin-top: 20px;
+        }
+        
+        .header-text h1 span{
+            color: #ff004f;
+        }
+        /* about */
+        #about{
+            padding: 80px 0;
+            color: #ababab;
+        }
+        .row{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .about-col-1{
+            flex-basis: 35%;
+        }
+        
+        .about-col-1 img{
+            width: 100%;
+            border-radius: 15px;
+        
+        }
+        
+        .about-col-2{
+            flex-basis: 60%;
+        }
+        .sub-title{
+            font-size: 60px;
+            font-weight:600;
+            color: #fff;
+        }
+        .tab-titles{
+            display: flex;
+            margin: 20px 0 40px;
+        
+        }
+        
+        .tab-links{
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .tab-links::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left:0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+        
+        .tab-links.active-link::after{
+            width: 50%;
+        }
+        
+        .tab-contents ul li{
+            list-style: none;
+            margin: 10px 0;
+        }
+        
+        .tab-contents ul li span{
+            color: #b54769;
+            font-size: 14px;
+        }
+        
+        .tab-contents{
+            display: none;
+        }
+        
+        .tab-contents.active-tab{
+            display: contents;
+        
+        }
+        
+        /* -----------services */
+        
+        #services{
+            font-size: large;
+            padding: 30px 0;
+        }
+        
+        .services-list{
+            font-weight: 500;
+            display: flex;
+            grid-template-columns: repeat(autofit, minmax(250px,1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        
+        }
+        
+        .services-list div{
+            background: #5a3636;
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 30px;
+            transition: backgroung 0.5s , transform 0.5s ;
+        }
+        
+        .services-list i{
+            font-size: 50px;
+            margin-bottom: 30px;
+        
+        }
+        .services-list div h2{
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .services-list div a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            display: inline-block;
+        }
+        
+        .services-list div a:hover{
+            text-transform: capitalize;
+            color: #000000;
+            
+        }
+        .services-list div:hover{
+            background: #ff004f;
+            transform: translateY(-10px);
+        }
+        
+        /* --------contact------ */
+        .contact-left{
+            flex-basis: 35%;
+            
+        }
+        .contact-right{
+            flex-basis: 60%;
+        
+        }
+        .contact-left p{
+            margin-top: 40px;
+           
+        }
+        
+        .contact-left p i{
+            color: #ff004f;
+            margin-right: 15px;
+            margin-bottom: 30px;
+            font-size: 25px;
+        }
+        
+        .social-icons{
+            margin-top: 30px;
+        }
+        .social-icons a{
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 30px;
+            color: #ababab;
+            display: inline-block;
+        }
+        
+        .social-icons a:hover{
+            color: #ff004f;
+            transform: translateY(-5px);
+            transition: 0.5s;
+        }
+        
+        .btn{
+            display: block;
+            margin: 50px auto;
+            width: fit-content;
+            border: 1px solid #ff004f;
+            padding: 14px 50px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #000000;
+        }
+        
+        .btn:hover{
+            background-color: #ff004f;
+            transition: 0.5s;
+            
+        }
+        
+        .contact-right form{
+            width: 100%;
+        }
+        
+        form input, form textarea{
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #262626;
+            color: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+        
+        .copyright{
+            width: 100%;
+            text-align: center;
+            padding: 25px;
+            background: #262626;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+        .copyright i{
+            color: #ff004f;
+        }
+        
+        /* -----responsive------ */
+        @media only screen and (max-width: 600px){
+            #header{
+                background-image: url(mobilespace.jpg);
+            }
+            #services{
+                font-size: 20px;
+                padding: 10px 0;
+                display: flex;
+            }
+            .services-list{
+                display: flex;
+            }
+        
+        }
+        
+        #msg{
+            color:#61b752;
+            margin-top: -40px;
+            display: block;
+        }
+        
+        .copyright p span{
+            color: #724343;
+            
+        }
+        
+        
+
+
+
+    </style>
+
+
+
+
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Untitled design.jpg" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+
+            </nav>
+            <div class="header-text">
+                <p>UI/UX Desingner</p>
+                <h1>Hi, I'm <span>Akshay Bedre</span> <br> from Pune</h1>
+            </div>
+        </div>
+    </div>
+    <!-- --------about-- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="akshay.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Enthusiastic and dedicated student pursuing Computer Engineering at AISSMS, with a keen interest in coding and making new projects. As a highly motivated individual, I am eager to leverage my academic background, passion for my domain, and strong problem-solving skills to contribute effectively as an intern.
+ I am a space geek fascinated by the wonders of the cosmos. Exploring the mysteries of the universe has fueled my curiosity and shaped my analytical thinking.
+In addition to my academic pursuits, I am an avid chess player, finding joy in the strategic game. The lessons learned on the chessboard—strategic planning, adaptability, and critical thinking—are skills I bring into every aspect of my life. </p>
+
+                         <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links"  onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links"  onclick="opentab('education')">Projects</p>
+                         </div>
+
+                         <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Languages</span><br>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>C++</li>
+                                    <li>Java</li>
+                                    <li>HTMl/CSS/JS</li>
+                                    <li>MySQL</li>
+                                   <li>Java</li>
+                                </ul>
+                                
+                                </li>
+        
+                            </ul>
+                         </div>
+                         <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Experience & Certificates</span><br>
+                                Coding Samurai
+                                <li>OneStopAi</li>
+                                (Intership projects completed)
+                                </li>
+                                <li>
+                                <span>Certificates</span><br>
+                                    Cisco
+                                <li>Codecademy</li> 
+                                <li>Linkedin</li> 
+                                <li>Codechef</li> 
+                            </li>
+                               
+
+                            </ul>
+                         </div>
+                         <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Projects</span><br> HTML/CSS/Js Calculator </li>
+                                <li>Web Page</li>
+                                <li>Clone Website</li>
+                                <li>To do list</li>
+                                <li>Bank management system</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------servies------ -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Desing</h2>
+                    <p><b>Frontend/Backend </b><br> HTML,CSS,JS,MYSQL,Python</p>
+                        <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>Technical</h2>
+                    <p><b>Data sturcture and algorithm</b>  </p>
+                        <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-database"></i>
+                    <h2>Database</h2>
+                    <p>MySQL , Mongodb </p>
+                        <a href="#">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------portfolio------------------- -->
+    <div id="Contact">
+        <div class="container">
+            <div class="row"> 
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p ><i class="fa-regular fa-envelope"></i>akshaybedre61@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>7887420405</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/be.akshay05/"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/akshay-bedre-01954a25b/"> <i class="fa-brands fa-linkedin"></i></a>
+
+                    </div>
+                    <a href="Akshay Resume CV.pdf" download class="btn">Download CV</a>
+                    
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                    <input type="text"  name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="abc123@gmail.com" required>
+                    <input type="text" name="Message" placeholder="Your message">
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <span id="msg"></span>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="copyright">
+        <p>Copyright © Akshay <i class="fa-solid fa-bolt"></i><span><i>Your response will be recored via google sheets</i></span> </p>
+    </div>
+    </div>
+    <script> 
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+    <script>
+        const scriptURL ='https://script.google.com/macros/s/AKfycbwZAhq0Z8Bc3MnhYb1o3od4IS8I1htD9FWr5A8tdxpA6ePAAR9SFSvgolHgmn1Tp-fp-Q/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")  
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {msg.innerHTML= "Message sent successfully"
+                  setTimeout(function(){
+                    msg.innerHTML = ""
+                  },5000)  
+                  form.reset()  
+                   })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
